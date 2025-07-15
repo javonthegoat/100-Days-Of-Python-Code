@@ -1,0 +1,1 @@
+In this repository you will find projects I've built while going through a 100 days of python course.
