@@ -27,7 +27,11 @@ scissors = '''
 '''
 # paper beats rock, scissors beats paper, and rock beats scissors.
 choices = [rock, paper, scissors] # add the strings to a list in the order they will be asked
-users_choice = choices[int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))] # convert the input (which is a string) to an integer and index the choices list to get the string
+try:
+    users_choice = choices[int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))] # convert the input (which is a string) to an integer and index the choices list to get the string
+except (ValueError, IndexError): # catch the value error for converting an invalid string to an integer and the index error for a number that is not in the range of the items in the choices list
+    print("Invalid choice. Type 0 for Rock, 1 for Paper, or 2 for Scissors.")
+    exit() # exit the program if the user enters an invalid choice
 computer_choice = choices[random.randint(0,2)] # choose a random string from the choices list
 print(f"{users_choice}\nComputer Chose:\n{computer_choice}") # print the user's choice and the computer's choice to the console
 user_wins = False # check if the user wins
