@@ -1,5 +1,6 @@
 import os
 from art import logo
+import time
 
 def clear_console():
     if os.name == "nt": # For Windows Operating Systems
@@ -32,3 +33,5 @@ while bidding:
         print(logo)
         print(f"{highest_bidder} has won with the highest bid amount of ${highest_bid}")
         bidders = {}
+        time.sleep(2)
+        clear_console()
