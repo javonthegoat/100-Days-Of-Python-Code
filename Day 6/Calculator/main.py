@@ -8,7 +8,11 @@ def multiply(x, y):
     return x * y
 
 def divide(x, y):
-    return x / y
+    try:
+        return x / y
+    except ZeroDivisionError:
+        print("You cannot divide by zero!")
+        return None
 
 operators = {"+": add, "-": subtract, "*": multiply, "/": divide}
 
@@ -24,6 +28,8 @@ calculating = True
 
 while calculating:
     result = calculator()
+    if result == None:
+        continue
     continue_calculating = input("Would you like to continue operating on the result? (y/n): ").lower()
     if continue_calculating == "y":
         while continue_calculating == "y":
