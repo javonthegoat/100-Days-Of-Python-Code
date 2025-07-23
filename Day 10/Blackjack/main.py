@@ -71,7 +71,7 @@ while running:
                     while sum(c_cards) < 17: # add cards to computers deck until it's score is over or equal to 17
                         add_card_to_deck(c_cards)
                 determine_a_winner(p_cards, c_cards, sum(p_cards), sum(c_cards))
-                break
+                break # restart the game
     else:
         print("Thanks for playing!")
         running = False
