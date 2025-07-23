@@ -76,3 +76,6 @@ while running:
                     break # restart the game
                 else:
                     running = False # end the program
+    else:
+        print("Thanks for playing!")
+        running = False
