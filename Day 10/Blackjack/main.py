@@ -18,7 +18,7 @@ def determine_a_winner(player_cards, computer_cards, player_score, computer_scor
     player_won = False
 
     if 11 in player_cards and player_score > 21: # Player has an ace (11) but there score is over 21 so the ace becomes a 1
-        for index, card in enumerate(player_cards): # replace all aces (11) with 1
+        for index, card in enumerate(player_cards): # Replaces all aces (11) in player's cards with 1
             if card == 11:
                 player_cards[index] = 1
         print(f"Your score went over 21 but you had an ace.")
