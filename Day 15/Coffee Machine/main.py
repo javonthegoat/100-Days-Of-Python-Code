@@ -95,11 +95,11 @@ while machine_on: # keep the machine running
     elif coffee_choice == "report": # Operator typed 'report'
         for resource, amount in resources.items(): # loop through the keys and values in the resources dictionary
             if resource == "coffee":
-                print(f"{resource}: {amount}g") # print the resource in title case along with its value
+                print(f"{resource.title()}: {amount}g") # print the resource in title case along with its value
             elif resource == "money":
-                print(f"{resource}: ${amount}")
+                print(f"{resource.title()}: ${amount}")
             else:
-                print(f"{resource}: {amount}ml")
+                print(f"{resource.title()}: {amount}ml")
     else:
         resources_available = check_resources(coffee_choice)
         if resources_available:
