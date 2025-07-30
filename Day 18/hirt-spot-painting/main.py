@@ -7,7 +7,7 @@ screen = Screen()
 screen.colormode(255)  # Set color mode to RGB
 
 rgb_colors = []
-for color in colorgram.extract('hirt_painting.jpg', 10):
+for color in colorgram.extract('hirt_painting.jpg', 10): # extract 10 colors from the image
     r = color.rgb.r
     g = color.rgb.g
     b = color.rgb.b
@@ -20,7 +20,7 @@ def draw_dots(rows, cols):
     start_x = -250
     start_y = -250
     for row in range(rows): 
-        my_turtle.setpos(start_x, start_y + row * 50) # move each row up by 50 pixels
+        my_turtle.setpos(start_x, start_y + row * 50) # starts at the same x position and moves up by 50 pixels for each row
         for col in range(cols):
             my_turtle.dot(20, random.choice(rgb_colors)) # draw a dot with a random color from the rgb_colors list
             my_turtle.forward(50) # move forward by 50 pixels to the next dot
