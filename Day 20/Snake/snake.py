@@ -45,4 +45,4 @@ class Snake:
             new_x = self.segments[segment - 1].xcor() # Get the x-coordinate of the segment in front
             new_y = self.segments[segment - 1].ycor() # Get the y-coordinate of the segment in front
             self.segments[segment].goto(new_x, new_y) # Move the segment to the position of the segment in front
-        self.segments[0].forward(20)
+        self.head.forward(20)
