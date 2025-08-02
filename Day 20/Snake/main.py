@@ -25,6 +25,7 @@ screen.onkey(snake.right, "Right")
 game_is_on = True
 game_over = False
 
+
 while game_is_on:
     screen.update()
     time.sleep(0.1)  # Control the speed of the game
@@ -39,8 +40,8 @@ while game_is_on:
         snake.segments.append(snake.add_snake_segment()) # add a segment to the snake
 
     # Check if the snakes head collided with its own body
-    for segment in range(1, len(snake.segments) - 1):
-        if snake.head.distance(snake.segments[segment].position()) <= 19:
+    for segment in snake.segments[1:]:
+        if snake.head.distance(segment.position()) <= 19:
             game_over = True
             score.game_over()
             print("Game Over! You slithered into your own body.")
