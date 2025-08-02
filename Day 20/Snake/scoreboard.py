@@ -11,8 +11,7 @@ class ScoreBoard:
         self.board.write(arg=f"Score: {self.score}", align="center", font=("Arial", 12, "normal"))
         self.board.hideturtle()
 
-    def increase_score(self):
+    def update_score(self):
+        self.board.clear() # get rid of the previous score
         self.score += 1
-
-    # def update_score():
-    #     self.board.write()
+        self.board.write(arg=f"Score: {self.score}", align="center", font=("Arial", 12, "normal"))
