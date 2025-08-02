@@ -30,6 +30,11 @@ while game_is_on:
 
     snake.move()
 
+    # Check if snake ate food
+    if snake.head.distance(food.orb.position()) < 15:
+        food.move()
+        score.update_score()
+
     # Check for collision with the wall
     if (snake.head.xcor() > 290 or snake.head.xcor() < -290 or
             snake.head.ycor() > 290 or snake.head.ycor() < -290):
