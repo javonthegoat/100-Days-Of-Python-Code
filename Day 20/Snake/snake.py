@@ -8,6 +8,7 @@ class Snake:
 
     def add_snake_segment(self):
         segment = Turtle()
+        segment.goto(self.segments[-1].position()) # move the new segment to the same position as the last segment on the snake
         segment.shape("square")
         segment.penup()
         segment.color("white")
