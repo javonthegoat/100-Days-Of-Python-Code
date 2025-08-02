@@ -38,7 +38,7 @@ while game_is_on:
 
     # Check if the snakes head collided with its own body
     for segment in range(1, len(snake.segments) - 1):
-        if snake.head.distance(snake.segments[segment].position()) <= 19:
+        if snake.head.distance(snake.segments[segment].position()) <= 20:
             game_is_on = False
             print("Game Over! You slithered into your own body.")
 
