@@ -23,12 +23,14 @@ screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 
 game_is_on = True
+game_over = False
 
 while game_is_on:
     screen.update()
     time.sleep(0.1)  # Control the speed of the game
 
-    snake.move()
+    if not game_over:
+        snake.move()
 
     # Check if snake ate food if it did move the food, increase the score, and add a segment to the snake
     if snake.head.distance(food.orb.position()) < 15:
@@ -39,11 +41,13 @@ while game_is_on:
     # Check if the snakes head collided with its own body
     for segment in range(1, len(snake.segments) - 1):
         if snake.head.distance(snake.segments[segment].position()) <= 19:
-            game_is_on = False
+            game_over = True
+            score.game_over()
             print("Game Over! You slithered into your own body.")
 
     # Check for collision with the wall
-    if (snake.head.xcor() > 290 or snake.head.xcor() < -290 or
-            snake.head.ycor() > 290 or snake.head.ycor() < -290):
-        game_is_on = False
+    if (snake.head.xcor() > 280 or snake.head.xcor() < -280 or
+            snake.head.ycor() > 280 or snake.head.ycor() < -280):
+        game_over = True
+        score.game_over()
         print("Game Over! You hit the wall.")
