@@ -6,6 +6,13 @@ class Snake:
         self.create_snake()
         self.head = self.segments[0]
 
+    def add_snake_segment(self):
+        segment = Turtle()
+        segment.shape("square")
+        segment.penup()
+        segment.color("white")
+        return segment
+
     def create_snake(self):
         snake_head = Turtle()
         snake_head.shape("square")
@@ -16,13 +23,6 @@ class Snake:
             segment = self.add_snake_segment()
             segment.goto(self.segments[-1].xcor() - 20, self.segments[-1].ycor()) # Position the new segment behind the last segment
             self.segments.append(segment)
-
-    def add_snake_segment(self):
-        segment = Turtle()
-        segment.shape("square")
-        segment.penup()
-        segment.color("white")
-        return segment
     
     def down(self):
         if self.head.heading() != 90: # snake is not moving up
