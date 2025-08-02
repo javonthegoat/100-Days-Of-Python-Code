@@ -13,7 +13,7 @@ class ScoreBoard:
 
     def game_over(self):
         self.board.home()
-        self.board.write(arg="GAME OVER", align="center", font=("Arial", 12, "normal"))
+        self.board.write(arg="GAME OVER", align="center", font=("Arial", 15, "normal"))
 
     def update_score(self):
         self.board.clear() # get rid of the previous score
