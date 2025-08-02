@@ -30,10 +30,17 @@ while game_is_on:
 
     snake.move()
 
-    # Check if snake ate food
+    # Check if snake ate food if it did move the food, increase the score, and add a segment to the snake
     if snake.head.distance(food.orb.position()) < 15:
-        food.move()
-        score.update_score()
+        food.move() # move the food randomly within the screen bounds
+        score.update_score() # increase the score
+        snake.segments.append(snake.add_snake_segment()) # add a segment to the snake
+
+    # Check if the snakes head collided with its own body
+    for segment in range(1, len(snake.segments) - 1):
+        if snake.head.distance(snake.segments[segment].position()) <= 19:
+            game_is_on = False
+            print("Game Over! You slithered into your own body.")
 
     # Check for collision with the wall
     if (snake.head.xcor() > 290 or snake.head.xcor() < -290 or
