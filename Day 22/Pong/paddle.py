@@ -3,7 +3,7 @@ from turtle import Turtle
 HEIGHT = 5 # 20 * HEIGHT
 MOVE = 5
 
-class Paddle(Turtle):
+class RightPaddle(Turtle):
     def __init__(self):
         super().__init__()
         self.right_paddle()

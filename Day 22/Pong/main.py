@@ -1,5 +1,5 @@
 from turtle import Screen
-from paddle import Paddle
+from paddle import RightPaddle
 
 screen = Screen()
 screen.setup(width=800,height=600)
@@ -7,9 +7,9 @@ screen.bgcolor("black")
 screen.title("Ping Pong")
 screen.listen()
 
-paddle = Paddle()
+right_paddle = RightPaddle()
 
-screen.onkey(paddle.up, "Up")
-screen.onkey(paddle.down, "Down")
+screen.onkey(right_paddle.up, "Up")
+screen.onkey(right_paddle.down, "Down")
 
 screen.exitonclick()
